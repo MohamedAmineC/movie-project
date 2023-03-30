@@ -1,4 +1,12 @@
 import './globals.css'
+import Link from 'next/link'
+import {Montserrat} from "next/font/google"
+
+const montserrat = Montserrat({
+  weight: ['400','700'],
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -12,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${montserrat.className} bg-black text-white mx-20 py-12`}>
+        {children}
+        </body>
     </html>
   )
 }
