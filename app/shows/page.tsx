@@ -12,7 +12,12 @@ const ShowsPage = async () => {
     <div>
         <div className='flex justify-between items-center'>
             <h1 className='py-2 m-4 text-4xl'>All the TV Shows</h1>
-            <Link className='bg-blue-600 p-5 text-lg rounded-lg m-4' href="/">Home</Link>
+            <div className='flex justify-center gap-8 items-center'>
+                <Link className='bg-blue-400 p-5 text-lg rounded-lg m-4' href="/">Home</Link>
+                <Link className='bg-blue-600 p-5 text-lg rounded-lg m-4' href="/movies">Movies</Link>
+                <Link className='bg-blue-800 p-5 text-lg rounded-lg m-4' href="/shows">TV Shows</Link>
+
+            </div>
         </div>
         <div className='bg-black grid gap-16 grid-cols-fluid p-6'>    
         {
