@@ -4,6 +4,10 @@ import Link from 'next/link';
 import {TbPlayerTrackNextFilled} from "react-icons/tb"
 import Menu from '../Menu';
 
+export const metadata = {
+    title: 'Find out the latest movies'
+}
+
 const MoviesPage = async () => {
     const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`);
     const res = await data.json();

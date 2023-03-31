@@ -3,6 +3,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Movie from '@/app/Movie';
 import Menu from '@/app/Menu';
+import { Metadata } from 'next';
+
+type Params = {
+  params:{
+    movie_id:string
+  }
+}
+
+export async function generateMetadata({params}:Params):Promise<Metadata>{
+  const {movie_id} = params;
+  const res = await fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${process.env.API_KEY}`)
+  const data = await res.json();
+  return {
+    title: data.title,
+    description: data.overview
+  }
+}
 
 export const generateStaticParams = async () => {
   const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)

@@ -4,6 +4,23 @@ import Link from 'next/link';
 import Movie from '@/app/Movie';
 import TVShow from '@/app/TVShow';
 import Menu from '@/app/Menu';
+import { Metadata } from 'next';
+
+type Params = {
+    params:{
+      show_id:string
+    }
+  }
+  
+  export async function generateMetadata({params}:Params):Promise<Metadata>{
+    const {show_id} = params;
+    const res = await fetch(`https://api.themoviedb.org/3/tv/${show_id}?api_key=${process.env.API_KEY}`)
+    const data = await res.json();
+    return {
+      title: data.name,
+      description: data.overview
+    }
+  }
 
 export const generateStaticParams = async () => {
   const data = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.API_KEY}`)

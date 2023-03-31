@@ -5,6 +5,10 @@ import {TbPlayerTrackNextFilled} from "react-icons/tb"
 import TVShow from '../TVShow';
 import Menu from '../Menu';
 
+export const metadata = {
+    title: 'Find out the latest TV Shows'
+}
+
 const ShowsPage = async () => {
     const data = await fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${process.env.API_KEY}`);
     const res = await data.json();

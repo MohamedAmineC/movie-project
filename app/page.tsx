@@ -2,6 +2,10 @@ import Movie from "./Movie";
 import Link from "next/link";
 import TVShow from "./TVShow";
 
+export const metadata = {
+  title: 'Tune in for the latest movies and TV Shows'
+}
+
 export default async function Home() {
   const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
   const res = await data.json();

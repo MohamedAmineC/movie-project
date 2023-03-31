@@ -3,6 +3,20 @@ import Movie from '@/app/Movie';
 import Link from 'next/link';
 import {TbPlayerTrackNextFilled} from "react-icons/tb"
 import Menu from '@/app/Menu';
+import { Metadata } from 'next';
+
+type Params = {
+  params:{
+      page:string
+  }
+}
+
+export function generateMetadata({params}:Params):Metadata{
+  const {page} = params;
+  return {
+      title: `Movies page ${page}`
+  }
+}
 
 const SinglePage = async ({params}:any) => {
     const page = Number(params.page);
