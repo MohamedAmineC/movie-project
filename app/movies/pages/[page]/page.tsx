@@ -43,7 +43,7 @@ const SinglePage = async ({params}:any) => {
             />
           ))}
       </div>
-      <div className='flex justify-center gap-8 [&>*]:p-4 [&>*]:bg-blue-500 [&>*]:rounded-full m-4'>
+      <div className='flex justify-center gap-8 [&>*]:p-4 [&>*]:bg-blue-500 [&>*]:rounded-full [&>*]:flex [&>*]:justify-center [&>*]:items-center m-4'>
             <Link href="/movies/pages/1"><TbPlayerTrackNextFilled className='rotate-180' /></Link>
             {previous && <p>...</p>}
             {
