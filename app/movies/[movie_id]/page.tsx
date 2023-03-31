@@ -17,7 +17,7 @@ const MovieDetail = async ({params}:any) => {
     const data = await res.json()
     console.log(data)
   return (
-    <div>
+    <div className='flex flex-col gap-8 items-center'>
         <Link className='bg-blue-600 p-5 text-lg rounded-lg' href="/">Home</Link>
         <div className='text-center'>
             <h2 className='text-2xl'>{data.title}</h2>

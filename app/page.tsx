@@ -14,7 +14,7 @@ export default async function Home() {
         <h2 className='py-2 m-4 text-4xl'>Trending Movies</h2>
         <Link href="/movies" className="py-2 m-4 text-2xl text-red-500">See all the movies</Link>
       </div>
-        <div className='bg-black grid gap-16 grid-cols-4 p-6'>
+        <div className='bg-black grid gap-16 lg:grid-cols-4 sm:grid-cols-2 p-6'>
           {trendingMovies.map((movie:any) => (
             <Movie 
             id={movie.id}

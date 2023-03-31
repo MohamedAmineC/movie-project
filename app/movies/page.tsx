@@ -13,7 +13,7 @@ const MoviesPage = async () => {
             <h1 className='py-2 m-4 text-4xl'>All the movies</h1>
             <Link className='bg-blue-600 p-5 text-lg rounded-lg m-4' href="/">Home</Link>
         </div>
-        <div className='bg-black grid gap-16 grid-cols-4 p-6'>    
+        <div className='bg-black grid gap-16 grid-cols-fluid p-6'>    
         {
             res.results.map((movie:any) => (
                 <Movie 
