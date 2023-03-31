@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 import Link from 'next/link';
 import Movie from '@/app/Movie';
+import Menu from '@/app/Menu';
 
 export const generateStaticParams = async () => {
   const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
@@ -22,11 +23,7 @@ const MovieDetail = async ({params}:any) => {
   return (
     <>
     <div className='flex flex-col gap-8 items-center'>
-        <div className='flex justify-center gap-8 items-center'>
-                <Link className='bg-blue-400 p-5 text-lg rounded-lg m-4' href="/">Home</Link>
-                <Link className='bg-blue-600 p-5 text-lg rounded-lg m-4' href="/movies">Movies</Link>
-                <Link className='bg-blue-800 p-5 text-lg rounded-lg m-4' href="/shows">TV Shows</Link>
-        </div>
+        <Menu />
         <div className='text-center flex flex-col gap-2 items-center'>
             <h2 className='text-2xl'>{data.title}</h2>
             <h2 className='text-lg'>{data.release_date}</h2>

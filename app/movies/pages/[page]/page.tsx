@@ -2,6 +2,7 @@ import React from 'react'
 import Movie from '@/app/Movie';
 import Link from 'next/link';
 import {TbPlayerTrackNextFilled} from "react-icons/tb"
+import Menu from '@/app/Menu';
 
 const SinglePage = async ({params}:any) => {
     const page = Number(params.page);
@@ -31,11 +32,7 @@ const SinglePage = async ({params}:any) => {
     }
   return (
     <div>
-      <div className='flex justify-center gap-8 items-center'>
-        <Link className='bg-blue-400 p-5 text-lg rounded-lg m-4' href="/">Home</Link>
-        <Link className='bg-blue-600 p-5 text-lg rounded-lg m-4' href="/movies">Movies</Link>
-        <Link className='bg-blue-800 p-5 text-lg rounded-lg m-4' href="/shows">TV Shows</Link>
-      </div>
+      <Menu />
       <div className='bg-black grid gap-16 grid-cols-fluid my-10 p-6'>
           {data.results?.map((movie:any) => (
             <Movie 

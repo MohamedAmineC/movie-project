@@ -2,6 +2,7 @@ import React from 'react'
 import Movie from '../Movie';
 import Link from 'next/link';
 import {TbPlayerTrackNextFilled} from "react-icons/tb"
+import Menu from '../Menu';
 
 const MoviesPage = async () => {
     const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`);
@@ -11,11 +12,7 @@ const MoviesPage = async () => {
     <div>
         <div className='flex justify-between items-center'>
             <h1 className='py-2 m-4 text-4xl'>All the movies</h1>
-            <div className='flex justify-center gap-8 items-center'>
-                <Link className='bg-blue-400 p-5 text-lg rounded-lg m-4' href="/">Home</Link>
-                <Link className='bg-blue-600 p-5 text-lg rounded-lg m-4' href="/movies">Movies</Link>
-                <Link className='bg-blue-800 p-5 text-lg rounded-lg m-4' href="/shows">TV Shows</Link>
-            </div>
+            <Menu />
         </div>
         <div className='bg-black grid gap-16 grid-cols-fluid p-6'>    
         {
