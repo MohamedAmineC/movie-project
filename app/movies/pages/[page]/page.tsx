@@ -58,16 +58,17 @@ const SinglePage = async ({params}:any) => {
             />
           ))}
       </div>
-      <div className='flex justify-center gap-8 [&>*]:p-4 [&>*]:bg-blue-500 [&>*]:rounded-full [&>*]:flex [&>*]:justify-center [&>*]:items-center m-4'>
-            <Link href="/movies/pages/1"><TbPlayerTrackNextFilled className='rotate-180' /></Link>
+      <div className='flex justify-center gap-8 [&>*]:p-4 [&>*]:rounded-full [&>*]:flex [&>*]:justify-center [&>*]:items-center m-4'>
+            <Link href="/movies/pages/1" className='bg-blue-500'><TbPlayerTrackNextFilled className='rotate-180' /></Link>
             {previous && <p>...</p>}
             {
-                pageLists.map((page) => (
-                    <Link href={`/movies/pages/${page}`} key={page}>{page}</Link>
+                pageLists.map((page_number) => (
+                  page_number === page ? <Link href={`/movies/pages/${page_number}`} key={page_number} className='bg-red-500'>{page_number}</Link> : 
+                  <Link href={`/movies/pages/${page_number}`} key={page_number} className='bg-blue-500'>{page_number}</Link>
                     ))
                 }
             {next && <p>...</p>}
-            <Link href="/movies/pages/1000"><TbPlayerTrackNextFilled /></Link>
+            <Link href="/movies/pages/1000" className='bg-blue-500'><TbPlayerTrackNextFilled /></Link>
         </div>
     </div>
   )

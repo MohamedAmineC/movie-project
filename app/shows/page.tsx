@@ -32,14 +32,15 @@ const ShowsPage = async () => {
                 ))
         }
         </div>
-        <div className='flex justify-center gap-8 [&>*]:p-4 [&>*]:bg-blue-500 [&>*]:rounded-full [&>*]:flex [&>*]:justify-center [&>*]:items-center m-4'>
-            <Link href="/shows/pages/1"><TbPlayerTrackNextFilled className='rotate-180' /></Link>
+        <div className='flex justify-center gap-8 [&>*]:p-4 [&>*]:rounded-full [&>*]:flex [&>*]:justify-center [&>*]:items-center m-4'>
+            <Link href="/shows/pages/1" className='bg-blue-500'><TbPlayerTrackNextFilled className='rotate-180' /></Link>
             {
                 pages.map((page,index) => (
-                    <Link href={`/shows/pages/${page}`} key={index}>{page}</Link>
+                    page === 1 ? <Link href={`/shows/pages/${page}`} key={index} className='bg-red-500'>{page}</Link> :
+                    <Link href={`/shows/pages/${page}`} key={index} className='bg-blue-500'>{page}</Link>
                     ))
                 }
-            <Link href="/shows/pages/1000"><TbPlayerTrackNextFilled /></Link>
+            <Link href="/shows/pages/1000" className='bg-blue-500'><TbPlayerTrackNextFilled /></Link>
         </div>
     </div>
   )
